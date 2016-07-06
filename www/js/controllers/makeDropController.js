@@ -52,7 +52,7 @@ angular.module('dropzio')
 
     var watchOptions = {
       timeout: 15000,
-      enableHighAccuracy: false
+      enableHighAccuracy: true
     };
 
     $cordovaGeolocation
@@ -99,7 +99,7 @@ angular.module('dropzio')
       }
 
     })
-    
+
     if (StatusBar) {
       StatusBar.styleLightContent();
       StatusBar.styleBlackTranslucent();
