@@ -42,11 +42,11 @@ angular.module('dropzio')
 
     $cordovaDeviceOrientation.getCurrentHeading()
     .then(function(orientResult){
-      if ($scope.angleDeg ) {
-
+      if ($scope.angleDeg + orientResult.magneticHeading >= 360) {
+        $scope.bearing = $scope.angleDeg + orientResult.magneticHeading - 360
+      } else {
+        
       }
-      $scope.bearing = orientResult.magneticHeading
-
     })
 
     var watchOptions = {
