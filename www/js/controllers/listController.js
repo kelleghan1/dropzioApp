@@ -34,9 +34,9 @@ angular.module('dropzio')
     })
     .then(function(done){
       ListService.getPosts()
-      .then(function(result){
+      .then(function(getPostResult){
         console.log('interval2');
-        $scope.postList = result;
+        $scope.postList = getPostResult;
       })
     })
 

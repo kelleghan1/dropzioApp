@@ -51,7 +51,7 @@ angular.module('dropzio')
   $scope.makeDropFormSubmit = function(){
 
     var watchOptions = {
-      timeout: 15000,
+      timeout: 1000,
       enableHighAccuracy: true
     };
 
@@ -73,8 +73,8 @@ angular.module('dropzio')
         $scope.addImage = function(picObj) {
           return $scope.images.$add(picObj)
         }
-        $state.go('tabs.list')
 
+        $state.go('tabs.list')
         $scope.addImage($scope.picPackage)
         .then(function(response){
           $scope.postObj.post.imgURL = response.path.o[1];
@@ -100,11 +100,11 @@ angular.module('dropzio')
 
     })
 
-    if (StatusBar) {
-      StatusBar.styleLightContent();
-      StatusBar.styleBlackTranslucent();
-      StatusBar.styleBlackOpaque();
-    }
+    // if (StatusBar) {
+    //   StatusBar.styleLightContent();
+    //   StatusBar.styleBlackTranslucent();
+    //   StatusBar.styleBlackOpaque();
+    // }
   }
 
 })

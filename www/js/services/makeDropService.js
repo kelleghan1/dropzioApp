@@ -7,11 +7,11 @@ angular.module('dropzio')
     drop: function (userObj){
       var deferred = $q.defer();
       $http.post('https://dropzio-server.herokuapp.com/posts', userObj)
-      .then(function(success){
-        deferred.resolve(success)
+      .then(function(serviceRes){
+        deferred.resolve(serviceRes)
       })
-      .catch(function(error){
-        deferred.reject(error)
+      .catch(function(err){
+        deferred.reject(err)
       })
       console.log('deferred', deferred.promise);
       return deferred.promise;
